@@ -17,8 +17,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    @IBAction func keyPressed(_ sender: UIButton) {
+    @IBAction func keyPressed(_ sender: UIButton) {  
+        sender.alpha = 0.5
         playSound(buttonName: sender.currentTitle!)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                // Code to be executed after a 0.2 second delay (second thing)
+                // Second thing
+            sender.alpha = 1
+            }
         
     }
     
